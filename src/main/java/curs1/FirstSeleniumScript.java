@@ -40,11 +40,8 @@ public class FirstSeleniumScript {
 		
 		//alta metoda
 		
-		
 		System.out.println(driver.getTitle());
-			
-		
-		driver.quit();
+	
 	}
 	
 	@Test
