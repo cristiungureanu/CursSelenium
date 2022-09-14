@@ -36,7 +36,7 @@ public class CssSelectorsExample extends BaseTest{
 		//ul->tagul html
 		//# --> id=
 		// menu_user -> valoarea atributului id
-		//  ul[id="menu_user]  == ul#menu_user
+		//  ul[id="menu_user"]  == ul#menu_user
 		
 		//css selector 
 		// ul[id=menu_user]

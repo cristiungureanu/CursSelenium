@@ -15,7 +15,9 @@ public class BaseTest {
 	@BeforeClass
 	public void setup() {
 		driver = WebDriverManager.chromedriver().create();
-		driver.get("http://keybooks.ro");
+		//driver.get("http://keybooks.ro");
+		
+		driver.get("https://the-internet.herokuapp.com/dynamic_loading/2");
 	}
 	
 	@AfterClass
