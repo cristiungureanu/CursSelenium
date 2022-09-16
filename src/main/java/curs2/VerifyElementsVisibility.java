@@ -36,11 +36,11 @@ public class VerifyElementsVisibility extends BaseTest{
 		SoftAssert softAssert = new SoftAssert();
 		
 		softAssert.assertFalse(usernameField.isDisplayed());
-		   softAssert.assertFalse(passwordField.isDisplayed());
+		  softAssert.assertFalse(passwordField.isDisplayed());
 		   loginMenu.click();
 		   softAssert.assertTrue(usernameField.isDisplayed());
 		   softAssert.assertTrue(passwordField.isDisplayed());
-		   softAssert.assertAll();
+		   softAssert.assertAll();;
 
 		
 	}

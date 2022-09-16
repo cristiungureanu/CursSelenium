@@ -12,6 +12,8 @@ public class loginTest extends BaseTest{
 		
 		NavMenuPage navMenu = new NavMenuPage(driver);
 		navMenu.navigateTo(navMenu.loginLink);
+		
+		
 	}
 	
 }
