@@ -1,6 +1,7 @@
 package curs5;
 
 import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertTrue;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -12,6 +13,8 @@ import org.testng.asserts.SoftAssert;
 import utils.BaseTest;
 
 public class SearchABookAndOrderIt extends BaseTest{
+	
+	WebElement result;
 	
 	@Test (priority = 0)
 		public void searchBook() throws InterruptedException {
@@ -36,7 +39,7 @@ public class SearchABookAndOrderIt extends BaseTest{
 		loadMore.click();
 		Thread.sleep(3000);
 		
-		WebElement result = driver.findElement(By.cssSelector("a[href *='the-story-about-me']"));
+		result = driver.findElement(By.cssSelector("a[href *='the-story-about-me']"));
 		
 		SoftAssert softAssert = new SoftAssert();
 		Thread.sleep(3000);	
@@ -50,7 +53,6 @@ public class SearchABookAndOrderIt extends BaseTest{
 	@Test (priority = 1, dependsOnMethods = "searchBook")
 	public void orderBook() throws InterruptedException {
 		
-		WebElement result = driver.findElement(By.cssSelector("a[href *='the-story-about-me']")); // cum fac sa declar variabila result globala sau sa o dau ca parametrul si sa o folosesc pe cea de sus?
 		result.click();
 		
 		assertEquals(driver.getCurrentUrl(), "https://keybooks.ro/shop/the-story-about-me/");
@@ -59,12 +61,7 @@ public class SearchABookAndOrderIt extends BaseTest{
 		addToCart.click();
 		Thread.sleep(3000);	
 		
-		//verificam daca ne apare textul cu added cart
-		// cum fac sa iau doar o parte din textul cu getText?
-		//cum fac sa verific ghilimelele "" ? 
-		// assertul asta imi pica
-		//assertEquals(driver.findElement(By.cssSelector("div[class *='woocommerce-message']")).getText(), "'The story about me' has been added to your cart.");
-		// div[class *='woocommerce-message'][text()$='has been added to your cart.']
+		assertTrue(driver.findElement(By.cssSelector("div[class *='woocommerce-message']")).getText().contains("“The story about me” has been added to your cart."));
 		
 		WebElement viewCart = driver.findElement(By.cssSelector(".woocommerce-message>a[href='https://keybooks.ro/cart/']"));
 		viewCart.click();
