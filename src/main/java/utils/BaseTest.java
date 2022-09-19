@@ -1,5 +1,7 @@
 package utils;
 
+import java.time.Duration;
+
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
@@ -16,7 +18,7 @@ public class BaseTest {
 	public void setup() {
 		driver = WebDriverManager.chromedriver().create();
 		driver.get("http://keybooks.ro");
-		
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		//driver.get("https://the-internet.herokuapp.com/dynamic_loading/2");
 	}
 	
