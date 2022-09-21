@@ -24,8 +24,8 @@ public class SendMessageFromContactPage extends BaseTest{
 		WebElement message = driver.findElement(By.cssSelector("textarea[name='your-message']"));
 		WebElement sendButton = driver.findElement(By.cssSelector("input[type='submit'][value='Send Message']"));
 		
-		SoftAssert softAssert = new SoftAssert();
-		softAssert.assertFalse(message.isDisplayed());
+		//SoftAssert softAssert = new SoftAssert();
+		//softAssert.assertFalse(message.isDisplayed());
 		
 		name.sendKeys("Cristi");
 		email.sendKeys("cristi@yahoo.com");
