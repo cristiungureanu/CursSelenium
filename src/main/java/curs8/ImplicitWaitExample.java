@@ -15,6 +15,8 @@ public class ImplicitWaitExample extends BaseTest{
 	@Test
 	public void testWait() {
 		
+		
+		// https://the-internet.herokuapp.com/dynamic_loading/2
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		
 		driver.findElement(By.cssSelector("div[id='start']>button")).click();

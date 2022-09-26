@@ -25,10 +25,10 @@ public class loginTest extends BaseTest{
 		
 		//var2
 		assertTrue(loginPage.loginMessageIsDisplayed(loginPage.loginSuccessMessage));
-		loginPage.logoutFromApp();
+		//loginPage.logoutFromApp();
 	}	
 		
-	@Test (priority=1)
+	@Test (priority=2)
 	public void invalidLoginTest() {
 		
 		NavMenuPage navMenu = new NavMenuPage(driver);
@@ -41,5 +41,6 @@ public class loginTest extends BaseTest{
 		assertTrue(loginPage.loginErrorMessageIsDisplayed());	
 		
 	}
+	
 	
 }

@@ -21,11 +21,10 @@ public class BaseTest {
 		driver = WebDriverManager.chromedriver().create();
     
 		driver.get("http://keybooks.ro");
-		//driver.get("http://keybooks.ro");
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		//driver.get("https://the-internet.herokuapp.com/dynamic_loading/2");
+		//driver.get("https://the-internet.herokuapp.com/javascript_alerts");
 
-		//comentariu pt conflict
 		jse = (JavascriptExecutor) driver;
 	}
 	
