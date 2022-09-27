@@ -17,6 +17,7 @@ public class NavMenuPage {
 	public By loginLink = By.linkText("Login");
 	public By contactLink = By.linkText("CONTACTS");
 	public By singleAuthor = By.linkText("SINGLE AUTHOR");
+	public By blog = By.linkText("BLOG");
 	
 	public void navigateTo(By locator) {
 		

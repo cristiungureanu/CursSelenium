@@ -37,7 +37,7 @@ public class XpathExample2 extends BaseTest{
 		password.sendKeys("12345@67890");
 		
 		//following-sibling
-		///div[contains(@class, 'login_field')]/following-sibling::div[contains(@class, 'remember_field')]/input
+		////div[contains(@class, 'login_field')]/following-sibling::div[contains(@class, 'remember_field')]/input
 		WebElement rememberMe = driver.findElement(By.xpath("//div[contains(@class, 'login_field')]/following-sibling::div[contains(@class, 'remember_field')]/input"));
 		rememberMe.click();
 		
