@@ -26,6 +26,13 @@ public class NavMenuPage {
 		driver.findElement(locator).click();
 	}
 	
-	
+	//ShopePage shp = new ShopPage(driver)
+	//ori metoda de mai sus ori metoda de mai jos
+	// pbiect care intoarce instanta paginii
+	public ShopPage navigateToShop() {
+		
+		driver.findElement(shopLink).click();	
+		return new ShopPage(driver);
+	}
 	
 }
