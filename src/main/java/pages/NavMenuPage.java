@@ -19,6 +19,8 @@ public class NavMenuPage {
 	public By singleAuthor = By.linkText("SINGLE AUTHOR");
 	public By blog = By.linkText("BLOG");
 	
+	public By product = By.xpath("//div[@id='sc_tab_1456822345_1_17']/descendant::a[contains(@href,'garden')]");
+	
 	public void navigateTo(By locator) {
 		
 		driver.findElement(locator).click();
