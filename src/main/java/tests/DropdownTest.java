@@ -29,7 +29,7 @@ public class DropdownTest extends BaseTest{
 		assertEquals(shopPage.getSelectedOption(), "Sort by price: low to high");	
 	}
 	
-	@Test (priority=2)
+	@Test (priority=2, groups = "ProductFunctionality")
 	public void selectByVisibleTextTest() {
 		
 		NavMenuPage navMenu = new NavMenuPage(driver);

@@ -2,7 +2,9 @@ package tests;
 
 import static org.testng.Assert.assertTrue;
 
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
+
 
 import pages.LoginPage;
 import pages.NavMenuPage;
@@ -10,33 +12,35 @@ import utils.BaseTest;
 
 public class loginTest extends BaseTest{
 
-	@Test (priority=0)
-	public void loginTest() {
+	@Parameters({"user", "pass"})
+	@Test (priority=0, groups = "LoginFunctionality")
+	public void loginTest(String username, String parola) {
 		
 		NavMenuPage navMenu = new NavMenuPage(driver);
 		navMenu.navigateTo(navMenu.loginLink);
 		
 		
 		LoginPage loginPage = new LoginPage(driver);
-		loginPage.loginInApp("TestUser", "12345@67890");
+		loginPage.loginInApp(username, parola);
 		
 		//var1
 		assertTrue(loginPage.loginSuccessMessageIsDisplayed());
 		
 		//var2
 		assertTrue(loginPage.loginMessageIsDisplayed(loginPage.loginSuccessMessage));
-		//loginPage.logoutFromApp();
+		loginPage.logoutFromApp();
 	}	
-		
-	@Test (priority=2)
-	public void invalidLoginTest() {
+
+	@Parameters({"invalidUser", "invalidPass"})
+	@Test (priority=2, groups = "LoginFunctionality")
+	public void invalidLoginTest(String user, String pass) {
 		
 		NavMenuPage navMenu = new NavMenuPage(driver);
 		navMenu.navigateTo(navMenu.loginLink);
 		
 		
 		LoginPage loginPage = new LoginPage(driver);
-		loginPage.loginInApp("TestCeva", "12345@67890");
+		loginPage.loginInApp(user, pass);
 		
 		assertTrue(loginPage.loginErrorMessageIsDisplayed());	
 		

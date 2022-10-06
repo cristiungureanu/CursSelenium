@@ -16,7 +16,7 @@ import utils.BaseTest;
 public class BlogTest extends BaseTest{
 
 	@Test
-	public void BlogTest() {
+	public void blogTest() {
 		
 		NavMenuPage navMenu = new NavMenuPage(driver);
 		navMenu.navigateTo(navMenu.blog);
