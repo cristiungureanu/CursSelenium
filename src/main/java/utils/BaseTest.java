@@ -19,12 +19,13 @@ public class BaseTest {
 	public JavascriptExecutor jse;
 	public NavMenuPage navMenu;
 	
-	@Parameters({"url"})
+	//@Parameters({"url"})
 	@BeforeClass (alwaysRun=true)
-	public void setup(String url) {
+	public void setup() {
 		driver = WebDriverManager.chromedriver().create();
 		driver.manage().window().maximize();
-		driver.get(url);
+		//driver.get(url);
+		driver.get("http://keybooks.ro");
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		//driver.get("https://the-internet.herokuapp.com/dynamic_loading/2");
 		//driver.get("https://the-internet.herokuapp.com/javascript_alerts");
