@@ -42,13 +42,15 @@ public class LoginPage extends SeleniumWrappers{
 		//driver.findElement(passwordField).sendKeys(password);
 		sendKeys(usernameField, username);
 		sendKeys(passwordField, password);
+		click(submitButton);
 	
-		driver.findElement(submitButton).click();
+		//driver.findElement(submitButton).click();
 	}
 	
 	public void logoutFromApp() {
 		
-		driver.findElement(logoutButton).click();
+		//driver.findElement(logoutButton).click();
+		click(logoutButton);
 	}
 	
 	

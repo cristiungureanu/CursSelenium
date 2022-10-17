@@ -5,17 +5,23 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
-public class ShopPage {
+import utils.SeleniumWrappers;
 
-	public WebDriver driver;
+public class ShopPage extends SeleniumWrappers{
+
+	//public WebDriver driver;
 	public WebElement dropdown;
 	public Select select;
 	
 	public ShopPage (WebDriver driver) {
-		this.driver = driver;
+		//this.driver = driver;
+		super(driver);
 	}
 	
 	public By orderDropdown = By.name("orderby");
+	public By sliderInitialPosition = By.cssSelector("span[style='left: 0%;']");
+	public By sliderFinalPosition = By.cssSelector("span[style='left: 100%;']");
+	
 	
 	public void selectByValue(String value) {
 		
