@@ -53,18 +53,31 @@ public class SeleniumWrappers {
 		}
 	}
 	
-public void waitForElementToBeClickable(WebElement element) {
+	public void waitForElementToBeClickable(WebElement element) {
+			
+			WebDriverWait wait =  new WebDriverWait(driver, Duration.ofSeconds(10));
+			wait.until(ExpectedConditions.elementToBeClickable(element));
+		}
+	
+	public void dragAndDrop (By locator, int x, int y) {
 		
-		WebDriverWait wait =  new WebDriverWait(driver, Duration.ofSeconds(10));
-		wait.until(ExpectedConditions.elementToBeClickable(element));
+		WebElement element = driver.findElement(locator);
+		Actions action = new Actions(driver);
+		action.dragAndDropBy(element, x, y);
+		
+		
 	}
 
-public void dragAndDrop (By locator, int x, int y) {
+	public void hoverElement(By locator) {	
+		WebElement element = driver.findElement(locator);
+		Actions action = new Actions(driver);
+		action.moveToElement(element).perform();	
+	}
 	
-	WebElement element = driver.findElement(locator);
-	Actions action = new Actions(driver);
-	action.dragAndDropBy(element, x, y);
+	public String readUrl() {
+		System.out.println("");
+		return driver.getCurrentUrl();
+	}
 	
 	
-}
 }

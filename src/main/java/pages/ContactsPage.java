@@ -11,13 +11,15 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.asserts.SoftAssert;
 
 import utils.BaseTest;
+import utils.SeleniumWrappers;
 
-public class ContactsPage {
+public class ContactsPage extends SeleniumWrappers{
 
 	public WebDriver driver;
 	
 	public ContactsPage (WebDriver driver) {
-		this.driver = driver;
+		//this.driver = driver;
+		super(driver);
 	}
 	
 	public By name = By.cssSelector("input[name='your-name']");

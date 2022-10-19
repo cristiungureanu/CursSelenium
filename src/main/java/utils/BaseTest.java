@@ -15,9 +15,10 @@ import pages.NavMenuPage;
 
 public class BaseTest {
 
-	public WebDriver driver;
+	public static WebDriver driver;
 	public JavascriptExecutor jse;
 	public NavMenuPage navMenu;
+	public BasePage app;
 	
 	//@Parameters({"url"})
 	@BeforeClass (alwaysRun=true)
@@ -32,6 +33,7 @@ public class BaseTest {
 
 		jse = (JavascriptExecutor) driver;
 		navMenu = new NavMenuPage(driver);
+		app = new BasePage();
 		
 		
 	}
