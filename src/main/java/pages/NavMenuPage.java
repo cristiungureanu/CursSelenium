@@ -1,6 +1,9 @@
 package pages;
 
+import static org.testng.Assert.assertEquals;
+
 import java.time.Duration;
+import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -62,6 +65,14 @@ public class NavMenuPage extends SeleniumWrappers{
 		WebDriverWait wait =  new WebDriverWait(driver, Duration.ofSeconds(10));
 		wait.until(ExpectedConditions.visibilityOf(element));
 		return element.isDisplayed();
+	}
+	
+	public void clickABook(String value) {
+		WebElement element =  driver.findElement(By.linkText(value));
+		WebDriverWait wait =  new WebDriverWait(driver, Duration.ofSeconds(10));
+		wait.until(ExpectedConditions.visibilityOf(element));
+		
+		element.click();
 	}
 	
 }

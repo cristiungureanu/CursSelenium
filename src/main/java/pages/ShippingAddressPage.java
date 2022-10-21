@@ -16,9 +16,7 @@ public class ShippingAddressPage extends SeleniumWrappers{
 		super(driver);
 	}
 	
-	//public By countryDropdown = By.xpath("//span[@id='select2-shipping_country-container']");
 	public By countryDropdown = By.name("shipping_country");
-	//public By provinceDropdown = By.xpath("//select[@name='shipping_state']/parent::span[@class='woocommerce-input-wrapper']");
 	public By provinceDropdown = By.name("shipping_state");
 	
 	public void selectByIndexCountry(int index) {
