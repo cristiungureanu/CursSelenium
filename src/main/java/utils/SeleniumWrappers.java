@@ -44,7 +44,8 @@ public class SeleniumWrappers {
 	
 	public void click(By locator) {
 		try {
-			
+			WebElement element = driver.findElement(locator);
+			element.click();
 		}catch(NoSuchElementException e) {
 			System.out.println("Something went wrong");
 		}catch(StaleElementReferenceException e) {

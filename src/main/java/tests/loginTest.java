@@ -10,7 +10,7 @@ import pages.LoginPage;
 import pages.NavMenuPage;
 import utils.BaseTest;
 
-public class loginTest extends BaseTest{
+public class LoginTest extends BaseTest{
 
 	@Parameters({"user", "pass"})
 	@Test (priority=0, groups = "LoginFunctionality")
@@ -46,5 +46,18 @@ public class loginTest extends BaseTest{
 		
 	}
 	
-	
+	@Parameters({"user2", "pass2"})
+	@Test (priority=4, groups = "LoginFunctionality")
+	public void loginTestWithoutLogout(String username, String parola) {
+		
+		NavMenuPage navMenu = new NavMenuPage(driver);
+		navMenu.navigateTo(navMenu.loginLink);
+		
+		
+		LoginPage loginPage = new LoginPage(driver);
+		loginPage.loginInApp(username, parola);
+		
+		assertTrue(loginPage.loginSuccessMessageIsDisplayed());
+		
+	}	
 }

@@ -51,8 +51,8 @@ public class DropdownTest extends BaseTest{
 		assertEquals(shopPage.getSelectedOption(), "Sort by latest");
 	}
 	
-	@Test (priority=4)
-	public void exceptionExample() {
+	//@Test (priority=4)
+	public void exceptionExample() throws InterruptedException {
 		NavMenuPage navMenu = new NavMenuPage(driver);
 		navMenu.navigateTo(navMenu.shopLink);
 		
@@ -62,6 +62,7 @@ public class DropdownTest extends BaseTest{
 	//refresh
 		WebElement dropdown2 = driver.findElement(By.name("orderby"));
 		Select select2 = new Select(dropdown2);
-		select.selectByVisibleText("Sort by latest");
+		select2.selectByVisibleText("Sort by latest");
+		Thread.sleep(10);
 	}
 }

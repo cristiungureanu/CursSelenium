@@ -3,12 +3,10 @@
     <test name="123" >
     	<parameter name ="user" value = "TestUser" />
     	<parameter name ="pass" value = "12345@67890" />
-   		 <parameter name ="invalidUser" value = "12345@67890" />
-    	<parameter name ="invalidPass" value = "12345@67890" />
     	<parameter name ="url" value = "https://keybooks.ro" />
     	
         <classes>
-            <class name="tests.LoginTest" ></class>
+            <class name= "tests.EditShippingAddressTest" ></class>
         </classes>
     </test>
 </suite>

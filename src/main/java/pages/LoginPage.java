@@ -12,10 +12,7 @@ public class LoginPage extends SeleniumWrappers{
 	public LoginPage(WebDriver driver) {
 		super(driver);
 		
-	}
-	
-	
-	
+	}	
 	
 	//public By usernameField = By.id("log");
 	public By usernameField = By.cssSelector("ul input[id='log']");  // punerea intr o variabila

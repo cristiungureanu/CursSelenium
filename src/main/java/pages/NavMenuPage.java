@@ -34,6 +34,9 @@ public class NavMenuPage extends SeleniumWrappers{
 	
 	public By product = By.xpath("//div[@id='sc_tab_1456822345_1_17']/descendant::a[contains(@href,'garden')]");
 	
+	public By userName = By.xpath("//span[@class='user_name']");
+	public By settingsLink = By.xpath("//a[@href='https://keybooks.ro/wp-admin/profile.php']");
+	
 	public void navigateTo(By locator) {
 		
 		driver.findElement(locator).click();
