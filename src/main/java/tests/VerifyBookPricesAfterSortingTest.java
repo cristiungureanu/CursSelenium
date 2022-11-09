@@ -1,6 +1,7 @@
 package tests;
 
 import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertTrue;
 
 import java.util.List;
 
@@ -57,12 +58,14 @@ public class VerifyBookPricesAfterSortingTest extends BaseTest{
 		
 		
 		
-		if (priceFirstElement<priceLastElement) {
-			System.out.println("First book is cheaper than the last book");
-		} else {
-			System.out.println("Last book is cheaper than first book! Test failed");
-		}
-		Thread.sleep(20);
+		//if (priceFirstElement<priceLastElement) {
+		//	System.out.println("First book is cheaper than the last book");
+		//} else {
+		//	System.out.println("Last book is cheaper than first book! Test failed");
+		//}
+		//Thread.sleep(20);
+		
+		assertTrue(priceFirstElement<priceLastElement);
 	}
 	
 }

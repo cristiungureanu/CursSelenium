@@ -16,6 +16,14 @@ import utils.DataProviderURLs;
 
 public class DataProviderVerifyBooksRedirectTest extends BaseTest{
 
+	/**
+	 * Folosind Data Provider Facem un test care va verifica redirectul cartilor din HomePage
+	 * Dam click pe fiecare dintre cele 6 carti si verificam url-ul fiecarei carti in parte ca este cel corect
+	 * @param name
+	 * @param url
+	 * @throws InterruptedException
+	 */
+	
 	@Test(dataProviderClass = DataProviderURLs.class, dataProvider = "urlsDataProvider")
 	public void verifyURLsTest(String name, String url) throws InterruptedException {
 		

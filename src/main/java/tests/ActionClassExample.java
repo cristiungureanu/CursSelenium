@@ -16,8 +16,8 @@ import utils.BaseTest;
 public class ActionClassExample extends BaseTest{
 	
 	
-	//@Test
-	public void dragAndDropTest() {
+	@Test
+	public void dragAndDropTest() throws InterruptedException {
 		
 		NavMenuPage menu =  new NavMenuPage(driver);
 		menu.navigateTo(menu.shopLink);
@@ -25,7 +25,7 @@ public class ActionClassExample extends BaseTest{
 		ShopPage  shop = new ShopPage(driver);
 		shop.dragAndDrop(shop.sliderInitialPosition, 100, 0);
 		shop.dragAndDrop(shop.sliderFinalPosition, -100, 0);
-
+		Thread.sleep(3000);
 	}
 	
 	//@Test (priority = 1)
@@ -54,7 +54,7 @@ public class ActionClassExample extends BaseTest{
 		Thread.sleep(3000);
 	}
 	
-	@Test (priority=3)
+	//@Test (priority=3)
 	public void sendKeysExample2() throws InterruptedException {
 		
 		
@@ -78,7 +78,7 @@ public class ActionClassExample extends BaseTest{
 		Thread.sleep(3000);
 	}
 	
-	@Test(priority=4)
+	//@Test(priority=4)
 	public void offSetExample() {
 		
 		WebElement nameElement = driver.findElement(app.contactPage.name);

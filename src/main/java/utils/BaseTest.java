@@ -6,8 +6,10 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -22,6 +24,7 @@ public class BaseTest {
 	
 	//@Parameters({"url"})
 	@BeforeClass (alwaysRun=true)
+	//@BeforeTest (alwaysRun=true)   -->daca vrem sa rulam 2 clase in xml fara sa inchida browserul
 	public void setup() {
 		driver = WebDriverManager.chromedriver().create();
 		driver.manage().window().maximize();
@@ -39,6 +42,7 @@ public class BaseTest {
 	}
 	
 	@AfterClass
+	//@AfterTest
 	public void teardown() throws InterruptedException{
 		Thread.sleep(3000);
 		driver.quit();
