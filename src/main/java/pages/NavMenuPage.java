@@ -31,6 +31,8 @@ public class NavMenuPage extends SeleniumWrappers{
 	public By blog = By.linkText("BLOG");
 	public By aboutLink = By.linkText("ABOUT");
 	public By postFormatsBlogLink = By.linkText("Post Formats");
+	public By portfolioLink = By.xpath("//a[@class='sf-with-ul'][contains(text(), 'Portfolio')]");
+	public By portfolio2ColumnsLink = By.linkText("Portfolio 2 columns");
 	
 	public By searchIcon = By.cssSelector("button[class*='search_submit']");
 	public By searchField =By.cssSelector("input[class*='search_field']");

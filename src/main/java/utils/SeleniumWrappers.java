@@ -2,6 +2,7 @@ package utils;
 
 
 import java.time.Duration;
+import java.util.List;
 import java.util.NoSuchElementException;
 
 import org.openqa.selenium.By;
@@ -73,6 +74,13 @@ public class SeleniumWrappers {
 		WebElement element = driver.findElement(locator);
 		Actions action = new Actions(driver);
 		action.moveToElement(element).perform();	
+	}
+	
+	public void hoverElementInAList(WebElement web) {
+		
+		Actions action = new Actions(driver);
+		action.moveToElement(web).perform();	
+		
 	}
 	
 	public String readUrl() {

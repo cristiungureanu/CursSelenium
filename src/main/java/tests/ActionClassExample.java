@@ -16,7 +16,7 @@ import utils.BaseTest;
 public class ActionClassExample extends BaseTest{
 	
 	
-	@Test
+	//@Test
 	public void dragAndDropTest() throws InterruptedException {
 		
 		NavMenuPage menu =  new NavMenuPage(driver);
@@ -28,7 +28,7 @@ public class ActionClassExample extends BaseTest{
 		Thread.sleep(3000);
 	}
 	
-	//@Test (priority = 1)
+	@Test (priority = 1)
 	public void hoverElement() throws InterruptedException{
 		//NavMenuPage menu = new NavMenuPage(driver);
 		//menu.hoverElement(menu.blog);
@@ -36,6 +36,7 @@ public class ActionClassExample extends BaseTest{
 		app.menu.hoverElement(app.menu.aboutLink);
 		Thread.sleep(3000);
 		app.menu.hoverElement(app.menu.aboutLink);
+		app.menu.navigateTo(app.menu.blog);
 		app.menu.hoverElement(app.menu.postFormatsBlogLink);
 		app.menu.navigateTo(app.menu.postFormatsBlogLink);
 		assertEquals(driver.getCurrentUrl(), "https://keybooks.ro/category/post-formats/"); //sau
